@@ -1,0 +1,121 @@
+SA.: Phase 3 Project: [INDIVIDUAL] Personal Expense Tracker
+Due Saturday by 11:59pm Points 15 Submitting a website url Available Jul 10 at 12am - Jul 20 at 11:59pm
+Personal Expense Tracker (CLI-Based Pipenv App)
+Part of what this project is testing is your ability to follow given instructions. While you will have a significant amount of freedom in how you implement the features, be sure to carefully read the directions for setting up the application.
+
+📌 Project Overview
+You will build a Personal Expense Tracker — a command-line Python application that allows users to log, categorize, and summarize their expenses using a local SQLite database.
+
+Your tracker must support:
+
+A fully interactive CLI session, and
+
+Individual command-based usage (e.g., pipenv run add-expense).
+
+The project will demonstrate your ability to use SQL databases, write modular Python code, and build real-world CLI tools with professional tooling.
+
+🧩 Core Features
+🧾 Expense Management
+Add Expense: Date, category, amount, optional description
+
+List Expenses: Show all, or filter by category/date
+
+Summarize: Total by month/category, highlight top spending
+
+Search: Search by keyword, category, or date range
+
+💻 CLI Usage Modes
+Interactive Mode
+
+Run as a full session:
+
+pipenv run tracker
+Menu interface:
+
+1. Add expense
+2. List expenses
+3. Summary
+4. Exit
+Command Mode
+
+Run individual features directly:
+
+pipenv run add-expense
+pipenv run list-expenses --category food
+pipenv run summary --month July
+⚙️ Technical Requirements
+Use Python + SQLAlchemy ORM (no raw SQL)
+
+Use SQLite for the local database (e.g., expenses.db)
+
+Manage environment and scripts with Pipenv
+
+Include Pipfile and Pipfile.lock
+
+Define commands as Pipenv scripts:
+
+[scripts]
+tracker = "python tracker.py"
+add-expense = "python tracker.py add"
+list-expenses = "python tracker.py list"
+summary = "python tracker.py summary"
+Implement good input validation and error handling
+
+Write clean, modular, and reusable Python code. You can look at a sample application folder structure below.
+
+expense-tracker/
+├── Pipfile
+├── Pipfile.lock
+├── README.md
+├── tracker.py                  # CLI entry point
+├── db/
+│   └── database.py             # Initializes DB connection
+├── models/
+│   └── expense.py              # SQLAlchemy model(s)
+├── commands/
+│   ├── add.py                  # Logic to add expenses
+│   ├── list.py                 # Logic to list expenses
+│   ├── summary.py              # Logic to summarize/filter
+│   └── utils.py                # Helpers/formatters
+├── tests/
+│   ├── test_add.py             # Pytest unit tests for adding
+│   ├── test_list.py            # Tests for listing
+│   └── test_summary.py         # Tests for summarizing
+└── expenses.db                 # (Optional) SQLite DB file
+ 
+
+📦 Submission Deliverables
+You must submit the following:
+
+✅ Full source code
+
+✅ Pipfile and Pipfile.lock with CLI scripts defined
+
+✅ README.md with:
+
+Setup instructions using Pipenv
+
+How to use interactive and command modes
+
+Example usage and output
+
+✅ A script to initialize the DB and populate seed data for demo purposes
+
+✅ A short screen recording (2–4 minutes) showing:
+
+How the app is set up
+
+How interactive mode and command mode work
+
+Sample usage scenarios (e.g., adding and listing expenses)
+
+📤 Upload your video to this Google Drive linkLinks to an external site.. Ensure your filename follows this format:
+expense-tracker-demo-<firstname_lastname>.mp4
+
+🧪 Grading Rubric (15 Points)
+Category	Criteria	Max Score
+README (3 pts)	Clear setup with Pipenv, documented CLI modes and commands	3
+CLI Operation (6 pts)	App supports interactive session and individual CLI commands using Pipenv	6
+SQL Operations (6 pts)	Uses SQLAlchemy correctly, supports CRUD, filtering, summarizing	6
+TOTAL		15
+   
